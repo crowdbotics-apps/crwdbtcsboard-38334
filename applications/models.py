@@ -11,6 +11,6 @@ class Application(models.Model):
     subscription = models.IntegerField(null=True,blank=True,)
     created_at = models.DateTimeField(null=True,blank=True,auto_now_add=True,)
     updated_at = models.DateTimeField(null=True,blank=True,auto_now_add=True,)
-    user = models.ForeignKey("users.User",on_delete=models.PROTECT,null=True,blank=True,related_name="application_user",)
+    user = models.ForeignKey("users.User",null=True,blank=True,on_delete=models.PROTECT,related_name="application_user",)
 
 # Create your models here.
