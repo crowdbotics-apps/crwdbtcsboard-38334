@@ -8,9 +8,9 @@ class Application(models.Model):
     framework = models.CharField(null=True,blank=True,max_length=256,)
     domain_name = models.CharField(null=True,blank=True,max_length=256,)
     screenshot = models.URLField(null=True,blank=True,)
-    subscription = models.IntegerField(null=True,blank=True,)
     created_at = models.DateTimeField(null=True,blank=True,auto_now_add=True,)
     updated_at = models.DateTimeField(null=True,blank=True,auto_now_add=True,)
     user = models.ForeignKey("users.User",null=True,blank=True,on_delete=models.PROTECT,related_name="application_user",)
+    subscription = models.ForeignKey("subscriptions.Subscription",on_delete=models.PROTECT,null=True,blank=True,related_name="application_subscription",)
 
 # Create your models here.
