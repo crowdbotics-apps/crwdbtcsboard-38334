@@ -31,7 +31,9 @@ urlpatterns = [
     path("rest-auth/", include("rest_auth.urls")),
     # Override email confirm to use allauth's HTML view instead of rest_auth's API view
     path("rest-auth/registration/account-confirm-email/<str:key>/", confirm_email),
-    path("rest-auth/registration/", include("rest_auth.registration.urls")),path("api/v1/", include("plans.api.v1.urls")), path("api/v1/", include("applications.api.v1.urls"))
+    path("rest-auth/registration/", include("rest_auth.registration.urls")),path("api/v1/", include("plans.api.v1.urls")), path("api/v1/", include("applications.api.v1.urls")), path("applications/", include("applications.urls")), path("plans/", include("plans.urls"))
+
+
 
 
 ]
