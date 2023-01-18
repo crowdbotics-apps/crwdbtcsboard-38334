@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',"apps", "applications"
+    'django.contrib.sites',"apps",
 ]
 LOCAL_APPS = [
     'home',
