@@ -19,7 +19,7 @@ class ApplicationFramework(Enum):
 
     @classmethod
     def choices(cls):
-        return tuple((i.name, i.value) for i in cls)
+        return tuple((i.name, str(i.value)) for i in cls)
 
 
 class Application(models.Model):
@@ -27,11 +27,7 @@ class Application(models.Model):
 
     name = models.CharField("Name", max_length=50, blank=False)
     description = models.TextField("Description",
-                                   blank=False,
-                                   validators=[MinLengthValidator(1,
-                                                                  'the field must contain at least 1 characters'),
-                                               ]
-                                   )
+                                   blank=False, max_length=20)
     type = models.CharField("Description", max_length=50, choices=ApplicationType.choices(), blank=False, default=None)
     framework = models.CharField("Framework", max_length=50, choices=ApplicationFramework.choices(), blank=False, default=None)
     domain_name = models.CharField("Domain Name", max_length=50, blank=False)
