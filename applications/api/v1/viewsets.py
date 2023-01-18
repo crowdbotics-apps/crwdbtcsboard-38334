@@ -5,5 +5,5 @@ from rest_framework import viewsets
 
 class ApplicationViewSet(viewsets.ModelViewSet):
     serializer_class = ApplicationSerializer
-    authentication_classes = authentication.TokenAuthentication
+    authentication_classes = (authentication.TokenAuthentication,)
     queryset = Application.objects.all()
