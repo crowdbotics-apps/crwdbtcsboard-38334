@@ -18,16 +18,16 @@ class Application(models.Model):
     REACT = 'React'
 
     APP_FRAMEWORKS = [
-        (DJANGO, 'Django'),
-        (REACT, 'React'),
+        ("DJANGO", 'Django'),
+        ("REACT", 'React'),
     ]
 
     WEB = "Web"
     MOBILE = "Mobile"
 
     APP_TYPES = [
-        (WEB, 'Web'),
-        (MOBILE, 'Mobile'),
+        ("WEB", 'Web'),
+        ("MOBILE", 'Mobile'),
     ]
 
     name = models.CharField("Name", max_length=50, blank=False)
