@@ -16,15 +16,24 @@ class Application(models.Model):
 
     DJANGO = 'Django'
     REACT = 'React'
+
     APP_FRAMEWORKS = [
         (DJANGO, 'Django'),
         (REACT, 'React'),
     ]
 
+    WEB = "Web"
+    MOBILE = "Mobile"
+
+    APP_TYPES = [
+        (WEB, 'Web'),
+        (MOBILE, 'Mobile'),
+    ]
+
     name = models.CharField("Name", max_length=50, blank=False)
     description = models.TextField("Description",
                                    blank=False, max_length=20)
-    type = models.CharField("Description", max_length=50, choices=ApplicationType.choices(), blank=False, default=None)
+    type = models.CharField("Description", max_length=50, choices=APP_TYPES, blank=False, default=None)
     framework = models.CharField("Framework", max_length=50, choices=APP_FRAMEWORKS, blank=False,
                                  default=None)
     domain_name = models.CharField("Domain Name", max_length=50, blank=False)
