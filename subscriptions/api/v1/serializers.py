@@ -17,6 +17,6 @@ class UserSubscriptionSerializer(serializers.ModelSerializer):
 
     def get_app(self, obj):
         return obj.app.name
-
+    
     def get_plan(self,obj):
-        return obj.plan.name
+        return f"{obj.plan.name} - {obj.plan.price}$"
