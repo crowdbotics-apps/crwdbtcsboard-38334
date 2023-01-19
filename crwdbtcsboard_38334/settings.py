@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     "apps",
     "plans",
+    "subscriptions",
 ]
 LOCAL_APPS = [
     'home',

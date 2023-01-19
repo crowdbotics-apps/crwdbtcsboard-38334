@@ -8,4 +8,5 @@ class Plan(models.Model):
     created_at = models.DateTimeField(null=True,blank=True,auto_now_add=True,)
     updated_at = models.DateTimeField(null=True,blank=True,auto_now_add=True,)
 
-# Create your models here.
+    def __str__(self):
+        return f"{self.name} - {self.price}"
